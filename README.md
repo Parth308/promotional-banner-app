@@ -1,78 +1,221 @@
-# Shopify App Template - Extension only
+# Promotional Banner Extension
 
-This is a template for building an [extension-only Shopify app](https://shopify.dev/docs/apps/build/app-extensions/build-extension-only-app). It contains the basics for building a Shopify app that uses only app extensions.
+A professional and customizable promotional banner for Shopify stores, designed to showcase special offers, free shipping, and limited-time promotions.
 
-This template doesn't include a server or the ability to embed a page in the Shopify Admin. If you want either of these capabilities, choose the [Remix app template](https://github.com/Shopify/shopify-app-template-remix) instead.
+## 🎯 Overview
 
-Whether you choose to use this template or another one, you can use your preferred package manager and the Shopify CLI with [these steps](#installing-the-template).
+This promotional banner extension provides a sleek, modern way to display promotional messages at the top of your Shopify store. It features smooth animations, responsive design, and easy customization through the Shopify theme editor.
 
-## Benefits
+## ✨ Features
 
-Shopify apps are built on a variety of Shopify tools to create a great merchant experience. The [create an app](https://shopify.dev/docs/apps/getting-started/create) tutorial in our developer documentation will guide you through creating a Shopify app.
+- **Professional Design**: Clean, modern aesthetic that complements any store theme
+- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- **Smooth Animations**: Subtle bounce effects and shine animations
+- **Easy Customization**: Configure colors, text, and animations through Shopify admin
+- **Performance Optimized**: Lightweight CSS and minimal JavaScript
+- **Accessibility Friendly**: Good contrast ratios and semantic markup
 
-This app template does little more than install the CLI and scaffold a repository.
+## 🚀 Installation
 
-## Getting started
+### Method 1: Manual Installation
 
-### Requirements
+1. Create the extension directory structure:
+   ```
+   extensions/
+   └── promotional-banner/
+       └── blocks/
+           └── banner.liquid
+   ```
 
-1. You must [download and install Node.js](https://nodejs.org/en/download/) if you don't already have it.
-1. You must [create a Shopify partner account](https://partners.shopify.com/signup) if you don’t have one.
-1. You must create a store for testing if you don't have one, either a [development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) or a [Shopify Plus sandbox store](https://help.shopify.com/en/partners/dashboard/managing-stores/plus-sandbox-store).
+2. Copy the provided code into `banner.liquid`
 
-### Installing the template
+3. Add the extension to your theme through the Shopify admin:
+   - Go to **Online Store** > **Themes**
+   - Click **Customize** on your active theme
+   - Add the **Promotional Banner** block where desired
 
-This template can be installed using your preferred package manager:
+### Method 2: Shopify CLI (Recommended)
 
-Using yarn:
+```bash
+# Create new extension
+shopify app scaffold extension --type=theme_app_extension
 
-```shell
-yarn create @shopify/app
+# Navigate to extension directory
+cd extensions/promotional-banner
+
+# Copy the banner.liquid file to blocks/
 ```
 
-Using npm:
+## 🎨 Customization
 
-```shell
-npm init @shopify/app@latest
+### Theme Editor Settings
+
+Access these settings through **Customize Theme** > **Add Block** > **Promotional Banner**:
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| Main Banner Text | Text | "Free Shipping on All Orders" | Primary promotional message |
+| Sub Text | Text | "Limited Time Offer • Shop Now & Save" | Secondary descriptive text |
+| Banner Start Color | Color | #8b5cf6 | Gradient start color |
+| Banner End Color | Color | #c084fc | Gradient end color |
+| Enable Animations | Checkbox | True | Toggle bounce and shine animations |
+| Show Shipping Icons | Checkbox | True | Display truck icons |
+
+### Advanced Customization
+
+#### Changing Colors
+```css
+/* Modify the gradient in the style attribute */
+background: linear-gradient(90deg, #your-color-1 0%, #your-color-2 50%, #your-color-3 100%);
 ```
 
-Using pnpm:
-
-```shell
-pnpm create @shopify/app@latest
+#### Custom Animations
+```css
+/* Add custom keyframes */
+@keyframes your-animation {
+  0% { /* start state */ }
+  100% { /* end state */ }
+}
 ```
 
-This will clone the template and install the required dependencies.
-
-#### Local Development
-
-[The Shopify CLI](https://shopify.dev/docs/apps/tools/cli) connects to an app in your Partners dashboard. It provides environment variables and runs commands in parallel.
-
-You can develop locally using your preferred package manager. Run one of the following commands from the root of your app.
-
-Using yarn:
-
-```shell
-yarn dev
+#### Typography Adjustments
+```css
+/* Modify font sizes and weights */
+font-size: 15px;
+font-weight: 600;
+letter-spacing: 0.5px;
 ```
 
-Using npm:
+## 📱 Responsive Breakpoints
 
-```shell
-npm run dev
+The banner automatically adjusts for different screen sizes:
+
+- **Desktop**: Full size with all animations
+- **Tablet (≤768px)**: Reduced padding and font sizes
+- **Mobile (≤480px)**: Compact layout with optimized spacing
+
+## 🔧 Technical Details
+
+### Browser Support
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
+
+### Performance
+- **CSS Size**: ~2KB minified
+- **Load Impact**: Minimal, loads with page
+- **Animation**: GPU-accelerated transforms
+
+### Dependencies
+- None (Pure CSS/HTML)
+- Uses system fonts for faster loading
+- SVG icons for crisp display
+
+## 🎭 Animation Details
+
+### Bounce Animation
+- **Duration**: 2 seconds
+- **Timing**: Infinite loop
+- **Effect**: Subtle vertical movement on shipping icons
+
+### Shine Effect
+- **Duration**: 3 seconds
+- **Timing**: Infinite loop
+- **Effect**: Gradient highlight sweep across banner
+
+### Hover Effects
+- **Transform**: 1px upward movement
+- **Shadow**: Purple glow effect
+- **Timing**: 0.3s cubic-bezier transition
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+**Banner not displaying:**
+- Ensure the extension is properly installed
+- Check that the block is added to your theme
+- Verify theme compatibility
+
+**Animations not working:**
+- Check if animations are enabled in settings
+- Verify browser supports CSS animations
+- Ensure no conflicting CSS
+
+**Mobile display issues:**
+- Clear browser cache
+- Test on actual devices
+- Check responsive breakpoints
+
+### Debug Mode
+
+Add this CSS for debugging:
+```css
+.promotional-banner {
+  border: 2px solid red !important;
+}
 ```
 
-Using pnpm:
+## 📋 Changelog
 
-```shell
-pnpm run dev
+### v1.0.0 (Current)
+- Initial release
+- Professional gradient design
+- Responsive layout
+- Smooth animations
+- Customizable settings
+- SVG icons
+- Theme editor integration
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This promotional banner extension is released under the MIT License.
+
+## 💡 Usage Examples
+
+### E-commerce Promotions
+```liquid
+<!-- Free shipping offer -->
+Main Text: "Free Shipping Worldwide"
+Sub Text: "On orders over $50 • Limited time"
 ```
 
-Open the URL generated in your console. Once you grant permission to the app, you can start development (such as generating extensions).
+### Seasonal Sales
+```liquid
+<!-- Holiday promotion -->
+Main Text: "Black Friday Sale - 50% Off"
+Sub Text: "Biggest sale of the year • Ends soon"
+```
 
-## Developer resources
+### New Product Launch
+```liquid
+<!-- Product announcement -->
+Main Text: "New Collection Available"
+Sub Text: "Fresh styles just dropped • Shop now"
+```
 
-- [Introduction to Shopify apps](https://shopify.dev/docs/apps/getting-started)
-- [App extensions](https://shopify.dev/docs/apps/build/app-extensions)
-- [Extension only apps](https://shopify.dev/docs/apps/build/app-extensions/build-extension-only-app)
-- [Shopify CLI](https://shopify.dev/docs/apps/tools/cli)
+## 🔗 Related Resources
+
+- [Shopify Theme Development](https://shopify.dev/themes)
+- [Shopify App Extensions](https://shopify.dev/apps/app-extensions)
+- [CSS Animations Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations)
+
+## 📞 Support
+
+For support and questions:
+- Create an issue in the repository
+- Check the troubleshooting section
+- Review Shopify's theme documentation
+
+---
+
+**Made with ❤️ By Parth For Shopify**
