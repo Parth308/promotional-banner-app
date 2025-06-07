@@ -1,0 +1,67 @@
+<!-- File: extensions/promotional-banner/blocks/banner.liquid -->
+
+<div class="promotional-banner" style="
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  font-size: 16px;
+  border: none;
+  margin: 0;
+  width: 100%;
+  font-family: system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.5px;
+  animation: slideDown 0.5s ease-out;
+">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <span style="font-size: 18px;">🎉</span>
+    <span>Free Shipping on All Orders!</span>
+    <span style="font-size: 18px;">🎉</span>
+  </div>
+</div>
+
+<style>
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .promotional-banner {
+    font-size: 14px !important;
+    padding: 12px 15px !important;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Promotional Banner",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "banner_text",
+      "label": "Banner Text",
+      "default": "Free Shipping on All Orders!"
+    },
+    {
+      "type": "color",
+      "id": "banner_bg_color",
+      "label": "Background Color",
+      "default": "#667eea"
+    }
+  ]
+}
+{% endschema %}
