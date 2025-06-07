@@ -82,7 +82,7 @@
   </div>
   
   <!-- Close button -->
-  <button onclick="closeBanner('promotional-banner-{{ section.id }}')" style="
+  <button class="close-button" onclick="closeBanner('promotional-banner-{{ section.id }}')" style="
     position: absolute;
     right: 15px;
     top: 50%;
@@ -143,6 +143,10 @@
     }
     .promotional-banner > div:first-of-type > div:last-child {
       font-size: 11px !important;
+    }
+    /* Hide close button on mobile */
+    .close-button {
+      display: none !important;
     }
   }
 </style>
