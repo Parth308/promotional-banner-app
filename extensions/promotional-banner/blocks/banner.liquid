@@ -1,6 +1,48 @@
+{% comment %}
+  Set default colors if not specified
+{% endcomment %}
+{% assign primary_color = block.settings.primary_color | default: '#4c1d95' %}
+{% assign secondary_color = block.settings.secondary_color | default: '#7c3aed' %}
+{% assign tertiary_color = block.settings.tertiary_color | default: '#a855f7' %}
+
+{% comment %}
+  Handle gradient presets
+{% endcomment %}
+{% if block.settings.gradient_preset != 'custom' and block.settings.gradient_preset != blank %}
+  {% case block.settings.gradient_preset %}
+    {% when 'purple_default' %}
+      {% assign primary_color = '#4c1d95' %}
+      {% assign secondary_color = '#7c3aed' %}
+      {% assign tertiary_color = '#a855f7' %}
+    {% when 'blue_ocean' %}
+      {% assign primary_color = '#1e40af' %}
+      {% assign secondary_color = '#3b82f6' %}
+      {% assign tertiary_color = '#06b6d4' %}
+    {% when 'pink_sunset' %}
+      {% assign primary_color = '#be185d' %}
+      {% assign secondary_color = '#ec4899' %}
+      {% assign tertiary_color = '#f97316' %}
+    {% when 'green_forest' %}
+      {% assign primary_color = '#166534' %}
+      {% assign secondary_color = '#22c55e' %}
+      {% assign tertiary_color = '#84cc16' %}
+    {% when 'red_fire' %}
+      {% assign primary_color = '#991b1b' %}
+      {% assign secondary_color = '#ef4444' %}
+      {% assign tertiary_color = '#f97316' %}
+    {% when 'dark_elegant' %}
+      {% assign primary_color = '#1f2937' %}
+      {% assign secondary_color = '#4b5563' %}
+      {% assign tertiary_color = '#6b7280' %}
+    {% when 'teal_mint' %}
+      {% assign primary_color = '#0f766e' %}
+      {% assign secondary_color = '#14b8a6' %}
+      {% assign tertiary_color = '#10b981' %}
+  {% endcase %}
+{% endif %}
 
 <div class="promotional-banner" id="promotional-banner-{{ section.id }}" style="
-  background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a855f7 100%);
+  background: linear-gradient(135deg, {{ primary_color }} 0%, {{ secondary_color }} 50%, {{ tertiary_color }} 100%);
   color: white;
   text-align: center;
   padding: 16px 20px;
@@ -278,6 +320,75 @@
       "id": "sub_text",
       "label": "Sub Text",
       "default": "Limited Time Offer • Shop Now & Save!"
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "select",
+      "id": "gradient_preset",
+      "label": "Gradient Preset",
+      "options": [
+        {
+          "value": "purple_default",
+          "label": "Purple (Default)"
+        },
+        {
+          "value": "blue_ocean",
+          "label": "Blue Ocean"
+        },
+        {
+          "value": "pink_sunset",
+          "label": "Pink Sunset"
+        },
+        {
+          "value": "green_forest",
+          "label": "Green Forest"
+        },
+        {
+          "value": "red_fire",
+          "label": "Red Fire"
+        },
+        {
+          "value": "dark_elegant",
+          "label": "Dark Elegant"
+        },
+        {
+          "value": "teal_mint",
+          "label": "Teal Mint"
+        },
+        {
+          "value": "custom",
+          "label": "Custom Colors"
+        }
+      ],
+      "default": "purple_default"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary Color (Left)",
+      "default": "#4c1d95",
+      "info": "Only used when 'Custom Colors' is selected"
+    },
+    {
+      "type": "color",
+      "id": "secondary_color",
+      "label": "Secondary Color (Center)",
+      "default": "#7c3aed",
+      "info": "Only used when 'Custom Colors' is selected"
+    },
+    {
+      "type": "color",
+      "id": "tertiary_color",
+      "label": "Tertiary Color (Right)",
+      "default": "#a855f7",
+      "info": "Only used when 'Custom Colors' is selected"
+    },
+    {
+      "type": "header",
+      "content": "Banner Options"
     },
     {
       "type": "checkbox",
