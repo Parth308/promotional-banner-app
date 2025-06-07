@@ -136,7 +136,9 @@
   @media (max-width: 768px) {
     .promotional-banner {
       padding: 12px 15px !important;
+      {% if block.settings.show_close_button %}
       touch-action: pan-y;
+      {% endif %}
       user-select: none;
     }
     .promotional-banner > div:first-of-type > div:first-child {
@@ -165,7 +167,8 @@
     }
   };
 
-  // Touch/swipe functionality for mobile (right swipe to close)
+  // Touch/swipe functionality for mobile (only if close button is enabled)
+  {% if block.settings.show_close_button %}
   const banner = document.getElementById('promotional-banner-{{ section.id }}');
   if (banner) {
     let startX = 0;
@@ -256,6 +259,7 @@
       banner.style.opacity = '';
     }, { passive: true });
   }
+  {% endif %}
 })();
 </script>
 
