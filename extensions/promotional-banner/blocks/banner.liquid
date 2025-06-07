@@ -17,7 +17,7 @@
   overflow: hidden;
   transition: transform 0.3s ease, opacity 0.3s ease;
 ">
-  {% if section.settings.enable_animations %}
+  {% if block.settings.enable_animations %}
   <!-- Animated background elements -->
   <div style="
     position: absolute;
@@ -56,14 +56,14 @@
       justify-content: center;
       gap: 8px;
     ">
-      {% if section.settings.enable_animations %}
+      {% if block.settings.enable_animations %}
       <span style="
         font-size: 18px;
         animation: pulse 2s infinite;
       ">🎉</span>
       {% endif %}
-      {{ section.settings.banner_text | default: "🎉 Free Shipping on All Orders! 🎉" }}
-      {% if section.settings.enable_animations %}
+      {{ block.settings.banner_text | default: "🎉 Free Shipping on All Orders! 🎉" }}
+      {% if block.settings.enable_animations %}
       <span style="
         font-size: 18px;
         animation: pulse 2s infinite;
@@ -74,13 +74,13 @@
       font-size: 13px;
       font-weight: 400;
       opacity: 0.95;
-      text-transform: uppercase;
       letter-spacing: 0.5px;
     ">
-      {{ section.settings.sub_text | default: "Limited Time Offer • Shop Now & Save!" }}
+      {{ block.settings.sub_text | default: "Limited Time Offer • Shop Now & Save!" }}
     </div>
   </div>
-  
+
+{% if block.settings.show_close_button %}
   <!-- Close button -->
   <button class="close-button" onclick="closeBanner('promotional-banner-{{ section.id }}')" style="
     position: absolute;
@@ -103,10 +103,11 @@
   " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.opacity='1'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.opacity='0.7'">
     ×
   </button>
+{% endif %}
 </div>
 
 <style>
-  {% if section.settings.enable_animations %}
+  {% if block.settings.enable_animations %}
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(180deg); }
