@@ -15,6 +15,28 @@ This promotional banner extension provides a sleek, modern way to display promot
 - **Performance Optimized**: Lightweight CSS and minimal JavaScript
 - **Accessibility Friendly**: Good contrast ratios and semantic markup
 
+## 🎨 Theme Editor Integration
+
+The banner seamlessly integrates with Shopify's theme editor, allowing you to customize all aspects without touching code:
+
+![image](https://github.com/user-attachments/assets/1842a375-4f39-4ac4-9410-90ab5494d3b9)
+
+
+### What You Can Edit:
+
+- **📝 Main Banner Text**: Change your primary promotional message
+- **📄 Sub Text**: Add supporting details or call-to-action text
+- **⚡ Animations**: Toggle bounce and shine effects on/off
+- **❌ Close Button**: Enable/disable dismissible banner option
+
+### Real-Time Preview
+
+All changes are instantly visible in the theme editor preview, making it easy to:
+- Test different color combinations
+- Preview text changes
+- See how animations look
+- Check mobile responsiveness
+
 ## 🚀 Installation
 
 ### Method 1: Manual Installation
@@ -46,7 +68,7 @@ cd extensions/promotional-banner
 # Copy the banner.liquid file to blocks/
 ```
 
-## 🎨 Customization
+## 🎨 Customization Options
 
 ### Theme Editor Settings
 
@@ -54,12 +76,21 @@ Access these settings through **Customize Theme** > **Add Block** > **Promotiona
 
 | Setting | Type | Default | Description |
 |---------|------|---------|-------------|
-| Main Banner Text | Text | "Free Shipping on All Orders" | Primary promotional message |
-| Sub Text | Text | "Limited Time Offer • Shop Now & Save" | Secondary descriptive text |
-| Banner Start Color | Color | #8b5cf6 | Gradient start color |
-| Banner End Color | Color | #c084fc | Gradient end color |
-| Enable Animations | Checkbox | True | Toggle bounce and shine animations |
-| Show Shipping Icons | Checkbox | True | Display truck icons |
+| Main Banner Text | Text Input | "Free Shipping on All Orders" | Primary promotional message displayed prominently |
+| Sub Text | Text Input | "Limited Time Offer • Shop Now & Save" | Secondary descriptive text or call-to-action |
+| Banner Start Color | Color Picker | #8b5cf6 | Gradient start color (left side) |
+| Banner End Color | Color Picker | #c084fc | Gradient end color (right side) |
+| Enable Animations | Toggle | ✅ Enabled | Control bounce and shine animations |
+| Show Shipping Icons | Toggle | ✅ Enabled | Display animated truck icons |
+| Show Close Button | Toggle | ❌ Disabled | Allow users to dismiss the banner |
+
+### Live Customization Benefits
+
+- **No Code Required**: Make changes directly in the theme editor
+- **Instant Preview**: See changes in real-time as you edit
+- **Brand Consistency**: Easily match your store's color scheme
+- **A/B Testing**: Quick text changes for testing different messages
+- **Seasonal Updates**: Rapidly update for holidays and sales events
 
 ### Advanced Customization
 
@@ -138,6 +169,11 @@ The banner automatically adjusts for different screen sizes:
 - Check that the block is added to your theme
 - Verify theme compatibility
 
+**Customization not working:**
+- Refresh the theme editor page
+- Check if you're editing the correct theme
+- Ensure the block is selected in the editor
+
 **Animations not working:**
 - Check if animations are enabled in settings
 - Verify browser supports CSS animations
@@ -164,16 +200,17 @@ Add this CSS for debugging:
 - Professional gradient design
 - Responsive layout
 - Smooth animations
-- Customizable settings
+- Theme editor integration with live preview
+- Customizable settings panel
 - SVG icons
-- Theme editor integration
+- Close button functionality
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test thoroughly
+4. Test thoroughly across different themes
 5. Submit a pull request
 
 ## 📄 License
@@ -187,6 +224,7 @@ This promotional banner extension is released under the MIT License.
 <!-- Free shipping offer -->
 Main Text: "Free Shipping Worldwide"
 Sub Text: "On orders over $50 • Limited time"
+Colors: Blue to Purple gradient
 ```
 
 ### Seasonal Sales
@@ -194,6 +232,7 @@ Sub Text: "On orders over $50 • Limited time"
 <!-- Holiday promotion -->
 Main Text: "Black Friday Sale - 50% Off"
 Sub Text: "Biggest sale of the year • Ends soon"
+Colors: Red to Orange gradient
 ```
 
 ### New Product Launch
@@ -201,6 +240,7 @@ Sub Text: "Biggest sale of the year • Ends soon"
 <!-- Product announcement -->
 Main Text: "New Collection Available"
 Sub Text: "Fresh styles just dropped • Shop now"
+Colors: Green to Teal gradient
 ```
 
 ## 🔗 Related Resources
