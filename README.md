@@ -19,23 +19,25 @@ This promotional banner extension provides a sleek, modern way to display promot
 
 The banner seamlessly integrates with Shopify's theme editor, allowing you to customize all aspects without touching code:
 
-![image](https://github.com/user-attachments/assets/1842a375-4f39-4ac4-9410-90ab5494d3b9)
+![image](https://github.com/user-attachments/assets/df725454-da50-4c94-9f1f-42dc43fce3c3)
 
 
 ### What You Can Edit:
 
 - **📝 Main Banner Text**: Change your primary promotional message
 - **📄 Sub Text**: Add supporting details or call-to-action text
+- **🎨 Color Settings**: Advanced gradient customization with presets
 - **⚡ Animations**: Toggle bounce and shine effects on/off
 - **❌ Close Button**: Enable/disable dismissible banner option
 
 ### Real-Time Preview
 
 All changes are instantly visible in the theme editor preview, making it easy to:
-- Test different color combinations
-- Preview text changes
-- See how animations look
+- Test different gradient presets and custom color combinations
+- Preview text changes with proper formatting
+- See how animations look and feel
 - Check mobile responsiveness
+- Fine-tune three-point gradient transitions
 
 ## 🚀 Installation
 
@@ -74,30 +76,51 @@ cd extensions/promotional-banner
 
 Access these settings through **Customize Theme** > **Add Block** > **Promotional Banner**:
 
+#### Text Content
 | Setting | Type | Default | Description |
 |---------|------|---------|-------------|
-| Main Banner Text | Text Input | "Free Shipping on All Orders" | Primary promotional message displayed prominently |
-| Sub Text | Text Input | "Limited Time Offer • Shop Now & Save" | Secondary descriptive text or call-to-action |
-| Banner Start Color | Color Picker | #8b5cf6 | Gradient start color (left side) |
-| Banner End Color | Color Picker | #c084fc | Gradient end color (right side) |
+| Main Banner Text | Text Input | "Free Shipping on All Orders!" | Primary promotional message displayed prominently |
+| Sub Text | Text Input | "Limited Time Offer • Shop Now & Save!" | Secondary descriptive text or call-to-action |
+
+#### Color Settings
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| Gradient Preset | Dropdown | "Purple (Default)" | Pre-configured color combinations |
+| Primary Color (Left) | Color Picker | #4C1D95 | Gradient start color - only when "Custom Colors" selected |
+| Secondary Color (Center) | Color Picker | #7C3AED | Gradient middle color - only when "Custom Colors" selected |
+| Tertiary Color (Right) | Color Picker | #7E2ACE | Gradient end color - only when "Custom Colors" selected |
+
+#### Banner Options
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| Show Close Button | Toggle | ✅ Enabled | Allow users to dismiss the banner |
 | Enable Animations | Toggle | ✅ Enabled | Control bounce and shine animations |
-| Show Shipping Icons | Toggle | ✅ Enabled | Display animated truck icons |
-| Show Close Button | Toggle | ❌ Disabled | Allow users to dismiss the banner |
 
 ### Live Customization Benefits
 
 - **No Code Required**: Make changes directly in the theme editor
 - **Instant Preview**: See changes in real-time as you edit
-- **Brand Consistency**: Easily match your store's color scheme
+- **Gradient Presets**: Choose from pre-configured color combinations or create custom gradients
+- **Advanced Color Control**: Fine-tune three-point gradients for perfect brand matching
+- **Smart Color Logic**: Custom color pickers only appear when needed
 - **A/B Testing**: Quick text changes for testing different messages
 - **Seasonal Updates**: Rapidly update for holidays and sales events
 
 ### Advanced Customization
 
-#### Changing Colors
+#### Advanced Gradient Customization
 ```css
-/* Modify the gradient in the style attribute */
-background: linear-gradient(90deg, #your-color-1 0%, #your-color-2 50%, #your-color-3 100%);
+/* Three-point gradient system */
+background: linear-gradient(90deg, 
+  #4C1D95 0%,     /* Primary Color (Left) */
+  #7C3AED 50%,    /* Secondary Color (Center) */
+  #7E2ACE 100%    /* Tertiary Color (Right) */
+);
+
+/* Custom gradient presets */
+.gradient-purple { background: linear-gradient(90deg, #4C1D95, #7C3AED, #7E2ACE); }
+.gradient-blue { background: linear-gradient(90deg, #1E3A8A, #3B82F6, #06B6D4); }
+.gradient-green { background: linear-gradient(90deg, #166534, #22C55E, #10B981); }
 ```
 
 #### Custom Animations
